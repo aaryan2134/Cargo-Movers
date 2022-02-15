@@ -4197,3 +4197,12 @@ ol.breadcrumb li,.grid_3 p,ul.list-group li,li.list-group-item1 {
 		font-size: 13px;
 	}
 }
+
+.center-about-image{
+  align-content: center;
+  align-self: center;
+}
+
+.customer-img{
+  aspect-ratio: 16/9;
+}
