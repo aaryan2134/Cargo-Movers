@@ -117,8 +117,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="content2-header1">
 					<p>Expected Date : <span id="date">Not Updated</span></p>
 				</div>
+      </div>
+      <div class="content2-w3ls">
         <div class="content2-header1">
-					<p>Consignee : <span id="date">Unknown</span></p>
+					<p>Consignee : <span id="consignee">Unknown</span></p>
+				</div>
+        <div class="content2-header1">
+					<p>Arrival : <span id="countryout">Unknown</span></p>
+				</div>
+        <div class="content2-header1">
+					<p>Departure : <span id="countryin">Unknown</span></p>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -750,9 +758,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 document.getElementById("tracking_number").innerHTML = data[i].trackcode;
                 document.getElementById("status").innerHTML = data[i].status;
                 document.getElementById("date").innerHTML = data[i].date;
-                document.getElementById("shipper").innerHTML = data[i].shipper;
+                document.getElementById("shipper").innerHTML = "Cargo Movers";
                 document.getElementById("countryin").innerHTML = data[i].countryin;
                 document.getElementById("countryout").innerHTML = data[i].countryout;
+                document.getElementById("consignee").innerHTML = data[i].consignee;
             }
         }
 
@@ -763,6 +772,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           document.getElementById("shipper").innerHTML = "";
           document.getElementById("countryin").innerHTML = "";
           document.getElementById("countryout").innerHTML = "";
+          document.getElementById("consignee").innerHTML = "";
         }
     }
 
