@@ -7,6 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
   background: #FFF;
 }
 
@@ -844,7 +845,7 @@ section.footer-agileits p.copyright a:hover {
 /*-- /back to top --*/
 /*-- inner pages banner --*/
 section.inner-w3ls {
-  background: url(../images/banner1.jpg);
+  background: url(../assets/banner.png);
   background-position: center;
   background-attachment: fixed;
   background-repeat: no repeat;
@@ -853,7 +854,6 @@ section.inner-w3ls {
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
   -ms-background-size: 100% 100%;
-  min-height: 450px;
 }
 
 section.inner-w3ls h2.text-center {
@@ -935,7 +935,7 @@ section.about-w3ls, section.team-w3ls, section.cust-agileits, section.service-w3
   padding: 50px 0;
 }
 
-section.about-w3ls i.fa, section.team-w3ls i.fa, section.cust-agileits i.fa, section.service-w3ls i.fa, section.service-agileits i.fa, section.work-w3ls i.fa, section.shipment-w3ls i.fa, section.transit-w3ls i.fa, section.contact-us i.fa, section.contact-w3ls i.fa {
+section.about-w3ls i.fa, section.network-w3ls i.fa, section.global-network i.fa, section.team-w3ls i.fa, section.cust-agileits i.fa, section.service-w3ls i.fa, section.service-agileits i.fa, section.work-w3ls i.fa, section.shipment-w3ls i.fa, section.transit-w3ls i.fa, section.contact-us i.fa, section.contact-w3ls i.fa {
   font-size: 27px;
   font-weight: thin;
   width: 70px;
@@ -953,7 +953,7 @@ section.about-w3ls i.fa, section.team-w3ls i.fa, section.cust-agileits i.fa, sec
   -ms-border-radius: 50%;
 }
 
-section.about-w3ls h3.text-center, section.team-w3ls h3.text-center, section.cust-agileits h3.text-center, section.service-w3ls h3.text-center, section.service-agileits h3.text-center, section.work-w3ls h3.text-center, section.shipment-w3ls h3.text-center, section.transit-w3ls h3.text-center, section.contact-us h3.text-center, section.contact-w3ls h3.text-center {
+section.about-w3ls h3.text-center, section.network-w3ls h3.text-center, section.global-network h3.text-center, section.team-w3ls h3.text-center, section.cust-agileits h3.text-center, section.service-w3ls h3.text-center, section.service-agileits h3.text-center, section.work-w3ls h3.text-center, section.shipment-w3ls h3.text-center, section.transit-w3ls h3.text-center, section.contact-us h3.text-center, section.contact-w3ls h3.text-center {
   font-size: 50px;
   font-weight: normal;
   color: #000;
@@ -962,7 +962,7 @@ section.about-w3ls h3.text-center, section.team-w3ls h3.text-center, section.cus
   position: relative;
 }
 
-section.about-w3ls h3.text-center:after, section.team-w3ls h3.text-center:after, section.cust-agileits h3.text-center:after, section.service-w3ls h3.text-center:after, section.service-agileits h3.text-center:after, section.work-w3ls h3.text-center:after, section.shipment-w3ls h3.text-center:after, section.transit-w3ls h3.text-center:after, section.contact-us h3.text-center:after, section.contact-w3ls h3.text-center:after {
+section.about-w3ls h3.text-center:after, section.network-w3ls h3.text-center:after, section.global-network h3.text-center:after, section.team-w3ls h3.text-center:after, section.cust-agileits h3.text-center:after, section.service-w3ls h3.text-center:after, section.service-agileits h3.text-center:after, section.work-w3ls h3.text-center:after, section.shipment-w3ls h3.text-center:after, section.transit-w3ls h3.text-center:after, section.contact-us h3.text-center:after, section.contact-w3ls h3.text-center:after {
   content: '';
   background-color: #2980B9;
   height: 5px;
@@ -4206,3 +4206,184 @@ ol.breadcrumb li,.grid_3 p,ul.list-group li,li.list-group-item1 {
 .customer-img{
   aspect-ratio: 16/9;
 }
+
+/* Testimonials */
+
+.info-w3ls3 {
+  margin-top: 50px;
+  padding: 50px 0;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.testimonial-item {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  margin-top: 50px;
+  scroll-snap-align: start;
+  width: 40%;
+  margin-left: 30%;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+  display: none;
+}
+
+.testimonial-item.active {
+  display: block; /* Only show the active item */
+}
+
+.testimonial-item:hover {
+  transform: scale(1.02);
+}
+
+.testimonial-img {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.testimonial-img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+  text-align: center;
+}
+
+.testimonial-content h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.testimonial-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    justify-content: flex-start;
+  }
+}
+
+/* Global Styles */
+
+/* Our Network Section */
+/* Our Network Section */
+.network-w3ls {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+}
+
+.network-w3ls h3 {
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.network-w3ls p {
+  font-size: 1.2em;
+  color: #999;
+  line-height: 30px;
+  text-align: center;
+}
+
+.network-w3ls .branch {
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.network-w3ls h5 {
+  font-size: 18px;
+  color: #000;
+  text-transform: uppercase;
+  font-family: 'Exo 2', sans-serif;
+  margin-bottom: 10px;
+}
+
+.network-w3ls .contact-info {
+  font-size: 14px;
+  color: #999;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
+.network-w3ls a {
+  color: #2b669a;
+  text-decoration: none;
+}
+
+.network-w3ls a:hover {
+  text-decoration: underline;
+}
+
+/* Global Network Section */
+.global-network {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+}
+
+.global-network h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.global-network p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #999;
+  line-height: 30px;
+  text-align: center;
+}
+
+.global-network .col-lg-6,
+.global-network .col-md-6,
+.global-network .col-sm-12 {
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.global-network ul {
+  list-style: none;
+  padding: 0;
+}
+
+.global-network li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+
+
+
+
+
