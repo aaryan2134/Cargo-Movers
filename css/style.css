@@ -409,11 +409,10 @@ section.info-w3ls p.text-center, section.info-w3ls2 p.text-center, section.info-
 /*-- 2nd banner section --*/
 section.banner-w3ls2 {
   /* background: url(../images/banner2.jpg); */
-  background: url('https://global-logistics.in/wp-content/uploads/2017/03/sliden5.jpg');
-  /* https://media-exp1.licdn.com/dms/image/C4D1BAQGRbnIrVvRjKw/company-background_10000/0/1531224012896?e=2159024400&v=beta&t=GXEJoG58qJ-4u3BmYrTa_08tw9xvBUfhQSx71ZLYSh0 */
+  background: url('../images/banner2.jpg');
   background-position: center;
   background-attachment: fixed;
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -848,7 +847,7 @@ section.inner-w3ls {
   background: url(../assets/banner.png);
   background-position: center;
   background-attachment: fixed;
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
@@ -4382,8 +4381,90 @@ ol.breadcrumb li,.grid_3 p,ul.list-group li,li.list-group-item1 {
   color: #555;
 }
 
+/* Floating Chatbot Styles */
+.chat-widget-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #2980B9; /* Match theme color */
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px
+ 8px rgba(0,0,0,0.2);
+  z-index: 9998;
+  transition: transform 0.3s ease;
+}
 
+.chat-widget-button:hover {
+  transform: scale(1.1);
+}
 
+.chat-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+}
 
+.chat-modal-content {
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  height: 80%;
+  max-height: 650px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
 
+.chat-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
 
+.chat-modal-header h4 {
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.chat-modal-close {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.chat-modal-body {
+  flex-grow: 1;
+  padding: 0;
+  overflow: hidden;
+}
+
+.chat-modal-body iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
