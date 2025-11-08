@@ -11,7 +11,7 @@ if exist %BUILD_DIR% (
 
 mkdir %BUILD_DIR%
 mkdir %BUILD_DIR%\css
-mkdir %BUILD_DIR%\css\fonts
+mkdir %BUILD_DIR%\fonts
 mkdir %BUILD_DIR%\js
 mkdir %BUILD_DIR%\dist
 
@@ -22,7 +22,7 @@ copy *.html %BUILD_DIR%\
 
 REM Copy minified assets and fonts
 copy css\production.min.css %BUILD_DIR%\css\
-copy css\fonts\* %BUILD_DIR%\css\fonts\
+xcopy /s /e /i fonts %BUILD_DIR%\fonts\
 copy js\production.min.js %BUILD_DIR%\js\
 
 REM Copy optimized images and assets from dist
