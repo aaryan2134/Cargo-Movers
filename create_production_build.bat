@@ -24,6 +24,7 @@ REM Copy minified assets and fonts
 copy css\production.min.css %BUILD_DIR%\css\
 xcopy /s /e /i fonts %BUILD_DIR%\fonts\
 copy js\production.min.js %BUILD_DIR%\js\
+copy js\chatbot-loader.js %BUILD_DIR%\js\
 
 REM Copy optimized images and assets from dist
 xcopy /s /e /i dist %BUILD_DIR%\dist\
