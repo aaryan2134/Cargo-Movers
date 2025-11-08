@@ -12,7 +12,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <!-- for-mobile-apps -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
-  <meta name="description" content="Track your shipment in real-time with the Cargo Movers online tracking tool. Enter your tracking code to see the current status of your delivery.">
+  <meta name="description"
+    content="Track your shipment in real-time with the Cargo Movers online tracking tool. Enter your tracking code to see the current status of your delivery.">
   <meta name="keywords" content="shipment tracking, cargo tracking, track order, real-time tracking, delivery status" />
   <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -32,6 +33,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <script src="https://unpkg.com/scrollreveal"></script>
   <!-- /css files -->
   <!-- font files -->
+  <!-- Note: Fonts are loaded from Google and are not part of the minified bundle. -->
   <link
     href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700italic,700,800,800italic'
     rel='stylesheet' type='text/css'>
@@ -51,557 +53,93 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <!-- navigation -->
   <header id="header-placeholder"></header>
   <!-- navigation -->
-<!-- banner section -->
-<section class="inner-w3ls">
-	<div class="container">
-		<h2 class="text-center w3layouts w3 w3l agileits agileinfo">Track Your Product</h2>
-		<!-- <p class="text-center w3layouts w3 w3l agileits agileinfo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p> -->
-	</div>
-</section>
-<!-- /banner section -->
-<!-- tracking section -->
-<section class="shipment-w3ls">
-	<div class="container">
-		<i class="fa fa-braille" aria-hidden="true"></i>
-		<h3 class="text-center wthree w3-agileits agileits-w3layouts agile w3-agile">Shipment Track</h3>
-		<p class="text-center wthree w3-agileits agileits-w3layouts agile w3-agile">Real Time Tracking Of Your Shipment</p>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <form name="tracker" method="GET" class="tracking_form2">
-          <div class="input-group">
-            <input type="text" name="trackcode" class="form-control" placeholder="Enter Tracking Code" required>
-            <span class="input-group-btn">
-              <input type="button" class="btn btn-primary" name="button" value="Track" onClick="tracker_out(this.form)">
-            </span>
+  <!-- banner section -->
+  <section class="inner-w3ls">
+    <div class="container">
+      <h2 class="text-center w3layouts w3 w3l agileits agileinfo">Track Your Product</h2>
+      <!-- <p class="text-center w3layouts w3 w3l agileits agileinfo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p> -->
+    </div>
+  </section>
+  <!-- /banner section -->
+  <!-- tracking section -->
+  <section class="shipment-w3ls">
+    <div class="container">
+      <i class="fa fa-braille" aria-hidden="true"></i>
+      <h3 class="text-center wthree w3-agileits agileits-w3layouts agile w3-agile">Shipment Track</h3>
+      <p class="text-center wthree w3-agileits agileits-w3layouts agile w3-agile">Real Time Tracking Of Your Shipment
+      </p>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form name="tracker" method="GET" class="tracking_form2">
+            <div class="input-group">
+              <input type="text" name="trackcode" class="form-control" placeholder="Enter Tracking Code" required>
+              <span class="input-group-btn">
+                <input type="button" class="btn btn-primary" name="button" value="Track"
+                  onClick="tracker_out(this.form)">
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="content-w3ls">
+        <div class="content1-w3ls">
+          <h2>Order Tracking: <span id="tracking_number">Order No</span></h2>
+        </div>
+        <div class="content2-w3ls">
+          <div class="content2-header1">
+            <p>Shipped Via : <span id="shipper">Cargo Movers</span></p>
           </div>
-        </form>
+          <div class="content2-header1">
+            <p>Status : <span id="status">Pending</span></p>
+          </div>
+          <div class="content2-header1">
+            <p>Expected Date : <span id="date">Not Updated</span></p>
+          </div>
+        </div>
+        <div class="content2-w3ls">
+          <div class="content2-header1">
+            <p>Consignee : <span id="consignee">Unknown</span></p>
+          </div>
+          <div class="content2-header1">
+            <p>Arrival : <span id="countryout">Unknown</span></p>
+          </div>
+          <div class="content2-header1">
+            <p>Departure : <span id="countryin">Unknown</span></p>
+          </div>
+          <div class="clear"></div>
+        </div>
       </div>
     </div>
-	</div>
-	<div class="container">
-		<div class="content-w3ls">	
-			<div class="content1-w3ls">
-				<h2>Order Tracking: <span id="tracking_number">Order No</span></h2>
-			</div>
-			<div class="content2-w3ls">
-				<div class="content2-header1">
-					<p>Shipped Via : <span id="shipper">Cargo Movers</span></p>
-				</div>
-				<div class="content2-header1">
-					<p>Status : <span id="status">Pending</span></p>	
-				</div>
-				<div class="content2-header1">
-					<p>Expected Date : <span id="date">Not Updated</span></p>
-				</div>
-      </div>
-      <div class="content2-w3ls">
-        <div class="content2-header1">
-					<p>Consignee : <span id="consignee">Unknown</span></p>
-				</div>
-        <div class="content2-header1">
-					<p>Arrival : <span id="countryout">Unknown</span></p>
-				</div>
-        <div class="content2-header1">
-					<p>Departure : <span id="countryin">Unknown</span></p>
-				</div>
-				<div class="clear"></div>
-			</div>
-      </div>
-      </div>
-    </section>
+  </section>
 
 
-    <!-- transit section -->
-<section class="transit-w3ls">
-	<div class="container">
-		<i class="fa fa-trophy" aria-hidden="true"></i>
-		<h3 class="text-center">Track Your 3rd Party Shipment</h3>
-		<p class="text-center">Track any of your other shipments from the links below</p>
-	</div>
-	<div class="container">
-				<ol>
-					<li class="list-group-item1"><a href="https://concorindia.co.in/containerquery.aspx">Track cargo at Concor</a></li>
-					<li class="list-group-item1"><a href="https://www.acmes.in/Live/ExportCargoTracking.aspx">Track cargo at Delhi Air Cargo</a></li>
-					<li class="list-group-item1"><a href="http://redberrytrack.com/track.php">Redberry Tracking</a></a></li>
-          <li class="list-group-item1"><a href="https://www.track-trace.com/">Track-trace</a></a></li>
-				</ol>
+  <!-- transit section -->
+  <section class="transit-w3ls">
+    <div class="container">
+      <i class="fa fa-trophy" aria-hidden="true"></i>
+      <h3 class="text-center">Track Your 3rd Party Shipment</h3>
+      <p class="text-center">Track any of your other shipments from the links below</p>
     </div>
-    </section>
-			<!-- <div class="content3-w3ls">
-				<div class="shipment">
-					<div class="confirm">
-						<div class="imgcircle">
-							<img src="images/confirm.png" alt="confirm order">
-						</div>
-						<span class="line"></span>
-						<p>Confirmed Order</p>
-					</div>
-					<div class="process">
-						<div class="imgcircle">
-							<img src="images/process.png" alt="process order">
-						</div>
-						<span class="line"></span>
-						<p>Processing Order</p>
-					</div>
-					<div class="quality">
-						<div class="imgcircle">
-							<img src="images/quality.png" alt="quality check">
-						</div>
-						<span class="line"></span>
-						<p>Quality Check</p>
-					</div>
-					<div class="dispatch">
-						<div class="imgcircle">
-							<img src="images/dispatch.png" alt="dispatch product">
-						</div>
-						<span class="line"></span>
-						<p>Dispatched Item</p>
-					</div>
-					<div class="delivery">
-						<div class="imgcircle">
-							<img src="images/delivery.png" alt="delivery">
-						</div>
-						<p>Product Delivered</p>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-		</div>
-	</div>	
-</section>	 -->
-<!-- /tracking section -->
-<!-- transit section -->
-<!-- <section class="transit-w3ls">
-	<div class="container">
-		<i class="fa fa-trophy" aria-hidden="true"></i>
-		<h3 class="text-center">Transit Location</h3>
-		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	</div>
-	<div class="container">
-		<div class="colorful-tab-wrapper" id="colorful-flatline">
-			<ul class="colorful-tab-menu">
-				<li class="colorful-tab-menu-item active" tab-color="#445370"><a href="#fl-0">USA</a></li>
-				<li class="colorful-tab-menu-item" tab-color="#00A566"><a href="#fl-1">Australia</a></li>
-				<li class="colorful-tab-menu-item" tab-color="#C9003C"><a href="#fl-2">Germany</a></li>
-				<li class="colorful-tab-menu-item" tab-color="#E54400"><a href="#fl-3">France</a></li>
-				<li class="colorful-tab-menu-item" tab-color="#33accc"><a href="#fl-4">England</a></li>
-			</ul>
-			<div class="colorful-tab-container">  
-				<div class="colorful-tab-content active" id="fl-0"> 
-					<div class="skill-info">
-						<div class="table-responsive">
-							<table class="table">
-								<thead>
-									<tr>
-										<th>Location</th>
-										<th>Taking Order</th>
-										<th>Processing</th>
-										<th>Dispatched</th>
-										<th>In-Transit</th>
-										<th>Delivered</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											<img src="images/usa.png" alt="w3ls" class="img-responsive">
-											<h4>Washington.DC</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/usa.png" alt="w3ls" class="img-responsive">
-											<h4>San Francisco</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/usa.png" alt="w3ls" class="img-responsive">
-											<h4>New York</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/usa.png" alt="w3ls" class="img-responsive">
-											<h4>Los Angeles</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/usa.png" alt="w3ls" class="img-responsive">
-											<h4>Miami</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="colorful-tab-content" id="fl-1">
-					<div class="skill-info">	
-						<div class="table-responsive">
-							<table class="table">
-								<thead>
-									<tr>
-										<th>Location</th>
-										<th>Taking Order</th>
-										<th>Processing</th>
-										<th>Dispatched</th>
-										<th>In-Transit</th>
-										<th>Delivered</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											<img src="images/australia.png" alt="w3ls" class="img-responsive">
-											<h4>Sydney</h4>
-											<div class="clearfix"></div>	
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/australia.png" alt="w3ls" class="img-responsive">
-											<h4>Melbourne</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/australia.png" alt="w3ls" class="img-responsive">
-											<h4>Brisbane</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/australia.png" alt="w3ls" class="img-responsive">
-											<h4>Adelaide</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/australia.png" alt="w3ls" class="img-responsive">
-											<h4>Perth</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>	
-				</div>
-				<div class="colorful-tab-content" id="fl-2"> 
-					<div class="skill-info">
-						<div class="table-responsive">
-							<table class="table">
-								<thead>
-									<tr>
-										<th>Location</th>
-										<th>Taking Order</th>
-										<th>Processing</th>
-										<th>Dispatched</th>
-										<th>In-Transit</th>
-										<th>Delivered</th>
-									</tr>
-								</thead>
-								<tbody>
-									<th>
-										
-									</th>
-									<tr>
-										<td>
-											<img src="images/germany.png" alt="w3ls" class="img-responsive">
-											<h4>Frankfurt</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/germany.png" alt="w3ls" class="img-responsive">
-											<h4>Munich</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/germany.png" alt="w3ls" class="img-responsive">
-											<h4>Stuttgart</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/germany.png" alt="w3ls" class="img-responsive">
-											<h4>Brussels</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/germany.png" alt="w3ls" class="img-responsive">
-											<h4>Berlin</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>	
-				</div>
-				<div class="colorful-tab-content" id="fl-3"> 
-					<div class="skill-info">
-						<div class="table-responsive">
-							<table class="table">
-								<thead>
-									<tr>
-										<th>Location</th>
-										<th>Taking Order</th>
-										<th>Processing</th>
-										<th>Dispatched</th>
-										<th>In-Transit</th>
-										<th>Delivered</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											<img src="images/france.png" alt="w3ls" class="img-responsive">
-											<h4>Paris</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/france.png" alt="w3ls" class="img-responsive">
-											<h4>Marseille</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/france.png" alt="w3ls" class="img-responsive">
-											<h4>Bordeaux</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/france.png" alt="w3ls" class="img-responsive">
-											<h4>Lyon</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/france.png" alt="w3ls" class="img-responsive">
-											<h4>Lille</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>	
-				</div>
-				<div class="colorful-tab-content" id="fl-4"> 
-					<div class="skill-info">
-						<div class="table-responsive">
-							<table class="table">
-								<thead>
-									<tr>
-										<th>Location</th>
-										<th>Taking Order</th>
-										<th>Processing</th>
-										<th>Dispatched</th>
-										<th>In-Transit</th>
-										<th>Delivered</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											<img src="images/uk.png" alt="w3ls" class="img-responsive">
-											<h4>London</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/uk.png" alt="w3ls" class="img-responsive">
-											<h4>Birmingham</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/uk.png" alt="w3ls" class="img-responsive">
-											<h4>Manchester</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/uk.png" alt="w3ls" class="img-responsive">
-											<h4>Liverpool</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Done</td>
-										<td>Pending</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="images/uk.png" alt="w3ls" class="img-responsive">
-											<h4>Bristol</h4>
-											<div class="clearfix"></div>
-										</td>
-										<td>Done</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-										<td>Pending</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div> -->
-  <!-- Flatline -->
-	<!-- </div>
-</section> -->
-<!-- /transit section -->
+    <div class="container">
+      <ol>
+        <li class="list-group-item1"><a href="https://concorindia.co.in/containerquery.aspx">Track cargo at Concor</a>
+        </li>
+        <li class="list-group-item1"><a href="https://www.acmes.in/Live/ExportCargoTracking.aspx">Track cargo at Delhi
+            Air Cargo</a></li>
+        <li class="list-group-item1"><a href="http://redberrytrack.com/track.php">Redberry Tracking</a></a></li>
+        <li class="list-group-item1"><a href="https://www.track-trace.com/">Track-trace</a></a></li>
+      </ol>
+    </div>
+  </section>
 
-<!-- footer section -->
-<footer id="footer-placeholder"></footer>
-<!-- /footer section -->
-<a href="#0" class="cd-top">Top</a>
-<!-- js files -->
+
+  <!-- footer section -->
+  <footer id="footer-placeholder"></footer>
+  <!-- /footer section -->
+  <a href="#0" class="cd-top">Top</a>
+  <!-- js files -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/SmoothScroll.min.js"></script>
@@ -632,119 +170,89 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     });
   </script>
   <script type="text/javascript">
-    $(document).ready(function(){
-        
-        $("#colorful").colorfulTab();    
-        
-        $("#colorful-elliptic").colorfulTab({
-            theme: "elliptic"
-        }); 
-       
-       $("#colorful-flatline").colorfulTab({
-            theme: "flatline"
-        });    
-        
-        $("#colorful-background-image").colorfulTab({
-            theme: "flatline",
-            backgroundImage: "true",
-            overlayColor: "#2d3305",
-            overlayOpacity: "0.8"
-        });   
-    
+    $(document).ready(function () {
+
+      $("#colorful").colorfulTab();
+
+      $("#colorful-elliptic").colorfulTab({
+        theme: "elliptic"
+      });
+
+      $("#colorful-flatline").colorfulTab({
+        theme: "flatline"
+      });
+
+      $("#colorful-background-image").colorfulTab({
+        theme: "flatline",
+        backgroundImage: "true",
+        overlayColor: "#2d3305",
+        overlayOpacity: "0.8"
+      });
+
     });
   </script>
-    <script src="https://unpkg.com/papaparse@5.3.1/papaparse.min.js"></script>
-    <script>
-        function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  <script src="https://unpkg.com/papaparse@5.3.1/papaparse.min.js"></script>
+  <script>
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
-    
+
     var tracking_number = getParameterByName('trackcode');
 
     let csv = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRxLuK_QpeLvaU-Ss6hxRoiQrrIzO4CIKNp0Of76iIkK-P8cc2wuNByFoifz_fpjHrznoR4VxX6DuPX/pub?gid=0&single=true&output=csv";
     var results = Papa.parse(csv, {
       header: true,
       download: true,
-      complete: function(results) {
+      complete: function (results) {
         console.log(results.data);
         data = results.data;
-        if(tracking_number.length != 0){
+        if (tracking_number.length != 0) {
           renderData(data, tracking_number);
         }
-        
+
         // console.log(data[1].trackcode);
       }
     });
-    
-    function renderData(data, tracking_number){
-      let found = false;
-        for(var i = 0; i < data.length; i++){
-            if(data[i].trackcode == tracking_number){
-              found = true;
-              console.log(data[i].trackcode);
-                document.getElementById("tracking_number").innerHTML = data[i].trackcode;
-                document.getElementById("status").innerHTML = data[i].status;
-                document.getElementById("date").innerHTML = data[i].date;
-                document.getElementById("shipper").innerHTML = "Cargo Movers";
-                document.getElementById("countryin").innerHTML = data[i].countryin;
-                document.getElementById("countryout").innerHTML = data[i].countryout;
-                document.getElementById("consignee").innerHTML = data[i].consignee;
-            }
-        }
 
-        if(found == false){
-          document.getElementById("tracking_number").innerHTML = "Tracking Number Not Found";
-          document.getElementById("status").innerHTML = "";
-          document.getElementById("date").innerHTML = "";
-          document.getElementById("shipper").innerHTML = "";
-          document.getElementById("countryin").innerHTML = "";
-          document.getElementById("countryout").innerHTML = "";
-          document.getElementById("consignee").innerHTML = "";
+    function renderData(data, tracking_number) {
+      let found = false;
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].trackcode == tracking_number) {
+          found = true;
+          console.log(data[i].trackcode);
+          document.getElementById("tracking_number").innerHTML = data[i].trackcode;
+          document.getElementById("status").innerHTML = data[i].status;
+          document.getElementById("date").innerHTML = data[i].date;
+          document.getElementById("shipper").innerHTML = "Cargo Movers";
+          document.getElementById("countryin").innerHTML = data[i].countryin;
+          document.getElementById("countryout").innerHTML = data[i].countryout;
+          document.getElementById("consignee").innerHTML = data[i].consignee;
         }
+      }
+
+      if (found == false) {
+        document.getElementById("tracking_number").innerHTML = "Tracking Number Not Found";
+        document.getElementById("status").innerHTML = "";
+        document.getElementById("date").innerHTML = "";
+        document.getElementById("shipper").innerHTML = "";
+        document.getElementById("countryin").innerHTML = "";
+        document.getElementById("countryout").innerHTML = "";
+        document.getElementById("consignee").innerHTML = "";
+      }
     }
 
-    function tracker_out (form) {
+    function tracker_out(form) {
       console.log(data);
       renderData(data, form.trackcode.value);
     }
-    // function renderData(data) { 
-    //   console.log(data[0].trackcode);
-    // }
-// for (let i = 1; i < data.length; i++) {
-//   let card = document.createElement("div");
-//   card.className = 'profile-card'
-//     let html = ''
-//   for (let j = 0; j < data[i].length; j++) {
-//     if (j === 0) {
-//       if (data[i][j] === '') return;
-//       html += `<h1>${data[i][j]}</h1>`
-//       // card.insertAdjacentHTML('afterend', `<h1>${data[i][j]}</h1>`)
-//        // += `<h1>${data[i][j]}</h1>`;
-//     } else {
-//       html += `<p>${data[i][j]}</p>`
-//       // card.insertAdjacentHTML('afterend', `<p>${data[i][j]}</p>`)
-//       // card += `<p>${data[i][j]}</p>`;
-//     }
-//   card.innerHTML = html;
-//   display.appendChild(card);
-    
-    
-//   }
-  
-//   // card.innerHTML = html;
-//   // card += '</div>'
-//   // let card = document.createElement("div");
-
-//   // display.appendChild(card);
-// }
-// }
-    </script>
-<!-- /js files -->
+  </script>
+  <!-- /js files -->
 </body>
+
 </html>
