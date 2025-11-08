@@ -26,10 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <meta property="og:type" content="website" />
 
   <!-- css files -->
-  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <link href="css/production.min.css" rel="stylesheet" type="text/css" media="all" />
   <!-- /css files -->
   <!-- font files -->
   <link
@@ -37,12 +34,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     rel='stylesheet' type='text/css'>
   <link href="//fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900" rel="stylesheet">
   <!-- /font files -->
-  <!-- js files -->
-
-  <!-- /js files -->
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="dist/images/favicon.png">
 
 </head>
 <script src="js/chatbot-loader.js"></script>
@@ -65,7 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <i class="fa fa-globe" aria-hidden="true"></i>
       <h3 class="text-center slideanim w3-agileits agileits-w3layouts agile w3-agile">Contact Us</h3>
       <!-- <p class="text-center slideanim w3-agileits agileits-w3layouts agile w3-agile">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> -->
-      <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
+      <div style="width: 100%"><iframe title="Cargo Movers Location Map" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
           marginwidth="0"
           src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Cargo%20Movers%20IATA+(Cargo%20Movers)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
             href="https://www.gps.ie/sport-gps/">gps watches</a></iframe></div>
@@ -115,7 +109,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <div class="col-xs-12 text-center">
             <div class="control-group form-group">
               <div class="controls">
-                <a href="https://g.page/r/CUgMmH-ZE2hcEB0/review" target="_blank"><img src="assets/ReviewQR.png" alt="QR Code for Google Review" class="qrCode" style="max-width: 200px; height: auto;"></a>
+                <a href="https://g.page/r/CUgMmH-ZE2hcEB0/review" target="_blank"><img src="dist/assets/ReviewQR.png" alt="QR Code for Google Review" class="qrCode" style="max-width: 200px; height: auto;"></a>
               </div>
             </div>
           </div>
@@ -174,14 +168,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <!-- /contact section -->
    <!-- footer section -->
    <footer id="footer-placeholder"></footer>
+   <!-- Chatbot placeholder -->
+  <div id="chatbot-placeholder"></div>
   <!-- /footer section -->
   <a href="#0" class="cd-top">Top</a>
   <!-- js files -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/SmoothScroll.min.js"></script>
-  <script src="js/index.js"></script>
-  <script src="js/top.js"></script>
+  <script src="js/production.min.js"></script>
   <script>
     // Function to load HTML content into a placeholder
     const loadHTML = (url, placeholderId, callback) => {
@@ -203,26 +195,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         if (navLink) navLink.classList.add('active');
       });
       loadHTML('_footer.html', 'footer-placeholder');
-      loadHTML('_chatbot_widget.html', 'chatbot-placeholder', () => {
-        const chatButton = document.getElementById('chat-widget-button');
-        const chatModal = document.getElementById('chat-modal-overlay');
-        const closeButton = document.getElementById('chat-modal-close');
-
-        chatButton.addEventListener('click', () => {
-          chatModal.style.display = 'flex';
-        });
-
-        closeButton.addEventListener('click', () => {
-          chatModal.style.display = 'none';
-        });
-
-        // Also close if user clicks on the overlay
-        chatModal.addEventListener('click', (event) => {
-          if (event.target === chatModal) {
-            chatModal.style.display = 'none';
-          }
-        });
-      });
     });
   </script>
   <!-- /js files -->
