@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build:css": "npx cleancss -o css/production.min.css css/bootstrap.min.css css/font-awesome.min.css css/style.css",
+    "build:css": "npx --yes clean-css-cli -o css/production.min.css css/bootstrap.min.css css/font-awesome.min.css css/style.css",
     "build:js": "npx uglifyjs js/jquery.min.js js/bootstrap.min.js js/SmoothScroll.min.js js/index.js js/top.js js/bgfader.js js/timeline.js js/home.js js/colorfulTab.min.js js/jqBootstrapValidation.js -o js/production.min.js",
     "build:images": "npx imagemin images/* --out-dir=dist/images --plugin=jpegtran --plugin=pngquant && npx imagemin assets/* --out-dir=dist/assets --plugin=jpegtran --plugin=pngquant",
     "build": "npm run build:css && npm run build:js && npm run build:images"
