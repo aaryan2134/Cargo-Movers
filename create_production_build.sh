@@ -6,6 +6,9 @@ BUILD_DIR="production_upload"
 
 echo "Creating production build directory..."
 
+echo "Building optimized images..."
+npm run build:images
+
 if [[ -d "$BUILD_DIR" ]]; then
   echo "Removing old build directory..."
   rm -rf "$BUILD_DIR"
@@ -17,6 +20,9 @@ echo "Copying essential files..."
 
 # Copy HTML and component files
 cp ./*.html "$BUILD_DIR/"
+
+# Rewrite packaged Forbes image to use the optimized production asset
+perl -0pi -e 's|assets/forbes\.jpeg|dist/assets/forbes.jpeg|g' "$BUILD_DIR/index.html"
 
 # Copy minified assets and fonts
 cp "css/production.min.css" "$BUILD_DIR/css/"
