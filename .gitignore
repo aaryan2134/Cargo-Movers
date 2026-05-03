@@ -1,5 +1,4 @@
 node_modules
 .DS_Store
 production_upload
-dist
 production_upload.zip
