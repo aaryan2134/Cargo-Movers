@@ -3,6 +3,14 @@ echo Creating production build directory...
 
 set BUILD_DIR=production_upload
 
+echo Building optimized images...
+call npm run build:images
+if errorlevel 1 (
+    echo Image build failed.
+    pause
+    exit /b 1
+)
+
 REM Clean up previous build
 if exist %BUILD_DIR% (
     echo Removing old build directory...
@@ -19,6 +27,9 @@ echo Copying essential files...
 
 REM Copy HTML and component files
 copy *.html %BUILD_DIR%\
+
+REM Rewrite packaged Forbes image to use the optimized production asset
+powershell -NoProfile -Command "(Get-Content '%BUILD_DIR%\index.html') -replace 'assets/forbes.jpeg','dist/assets/forbes.jpeg' | Set-Content '%BUILD_DIR%\index.html'"
 
 REM Copy minified assets and fonts
 copy css\production.min.css %BUILD_DIR%\css\
